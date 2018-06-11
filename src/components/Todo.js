@@ -4,12 +4,23 @@ import React from 'react'
 const Todo = props => {
   const { todo, index, removeTodo, editTodo, executeTodo } = props
   return (
-    <li key={index}>
-      {todo.content} - {todo.author}
-      <button onClick={() => removeTodo(index)}>Remove Todo</button>
-      <button onClick={() => editTodo(index, todo)}>Edit Todo</button>
-      <button onClick={() => executeTodo(index)}>{todo.completed ? 'N' : 'Y'}</button>
-    </li>
+    <tr key={index}>
+      <td>
+        {todo.content}
+      </td>
+      <td>
+        {todo.author}
+      </td>
+      <td>
+        <button onClick={() => removeTodo(index)}>Remove Todo</button>
+      </td>
+      <td>
+        <button onClick={() => editTodo(index, todo)}>Edit Todo</button>
+      </td>
+      <td>
+        <button onClick={() => executeTodo(index)}>{todo.completed ? 'N' : 'Y'}</button>
+      </td>
+    </tr>
   )
 }
 
